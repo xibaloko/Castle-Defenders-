@@ -1,41 +1,37 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Castle/Sprites/Sprite03.png" type="Texture" id=1]
-[ext_resource path="res://Castle/Sprites/Sprite01.png" type="Texture" id=2]
-[ext_resource path="res://Castle/Sprites/Sprite02.png" type="Texture" id=3]
-[ext_resource path="res://Castle/Castle.gd" type="Script" id=4]
+[ext_resource path="res://Castle/Sprites/Sprite02.png" type="Texture" id=1]
+[ext_resource path="res://Castle/Sprites/Sprite03.png" type="Texture" id=2]
+[ext_resource path="res://Castle/Sprites/Sprite01.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Deteriored",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "Destroyed",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "Deteriorated",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
 "name": "Intact",
 "speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 181.237
+radius = 163.441
 
-[node name="Castle" type="Area2D"]
-position = Vector2( 247.903, 448.884 )
-script = ExtResource( 4 )
+[node name="Castle" type="StaticBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 6.38672, -63.8989 )
-scale = Vector2( 0.094755, 0.094755 )
+scale = Vector2( 0.095, 0.095 )
 frames = SubResource( 1 )
 animation = "Intact"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 69.2221, -16.6391 )
+position = Vector2( 78.3476, 42.9709 )
 shape = SubResource( 2 )
