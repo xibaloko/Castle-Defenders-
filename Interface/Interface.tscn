@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Interface/Hud/coinsbarbg.png" type="Texture" id=1]
+[ext_resource path="res://Interface/Hud/shieldbarbg.png" type="Texture" id=2]
+[ext_resource path="res://Interface/Hud/kingslifebarfill.png" type="Texture" id=3]
+[ext_resource path="res://Interface/Hud/shieldbarfill.png" type="Texture" id=4]
+[ext_resource path="res://Interface/Hud/energybarfill.png" type="Texture" id=5]
+[ext_resource path="res://Interface/Hud/kingslifebarbg.png" type="Texture" id=6]
+[ext_resource path="res://Interface/Hud/lifebarbg.png" type="Texture" id=7]
+[ext_resource path="res://Interface/Hud/energybarbg.png" type="Texture" id=8]
+[ext_resource path="res://Interface/Hud/lifebarfill.png" type="Texture" id=9]
+[ext_resource path="res://Interface/Font/BalsamiqSans-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 10 )
+
+[node name="Interface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_right = -81.0
+margin_bottom = 368.0
+rect_scale = Vector2( 0.3, 0.3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerStats" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 505.0
+margin_bottom = 368.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayersLifeBar" type="TextureProgress" parent="HBoxContainer/PlayerStats"]
+margin_right = 505.0
+margin_bottom = 120.0
+value = 40.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 9 )
+
+[node name="PlayersEnergyBar" type="TextureProgress" parent="HBoxContainer/PlayerStats"]
+margin_top = 124.0
+margin_right = 505.0
+margin_bottom = 244.0
+value = 60.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 5 )
+
+[node name="BarricadesShieldBar" type="TextureProgress" parent="HBoxContainer/PlayerStats"]
+margin_top = 248.0
+margin_right = 505.0
+margin_bottom = 368.0
+value = 100.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+
+[node name="CastleStats" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 509.0
+margin_right = 1014.0
+margin_bottom = 368.0
+
+[node name="CastlesLifeBar" type="TextureProgress" parent="HBoxContainer/CastleStats"]
+margin_right = 505.0
+margin_bottom = 120.0
+value = 100.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 3 )
+
+[node name="CoinsBar" type="TextureRect" parent="HBoxContainer/CastleStats"]
+margin_top = 124.0
+margin_right = 505.0
+margin_bottom = 245.0
+texture = ExtResource( 1 )
+
+[node name="Amount" type="Label" parent="HBoxContainer/CastleStats/CoinsBar"]
+margin_left = 129.1
+margin_top = 32.15
+margin_right = 289.1
+margin_bottom = 85.15
+custom_fonts/font = SubResource( 1 )
+text = "1000"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
