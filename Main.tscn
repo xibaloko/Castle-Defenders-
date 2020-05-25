@@ -4,7 +4,7 @@
 [ext_resource path="res://Castle/Castle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Skills/Barricade/Barricade.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Enemies/OrkEnemy3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/OrkEnemy1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Skills/Call Troops/Troop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Skills/Volley of Arrows/Arrow.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Interface/Interface.tscn" type="PackedScene" id=8]
@@ -30,14 +30,14 @@ position = Vector2( 384, 489 )
 [node name="Troop" parent="." instance=ExtResource( 6 )]
 position = Vector2( 480, 485 )
 
-[node name="OrkEnemy3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 832, 478 )
-
-[node name="Arrow" parent="." instance=ExtResource( 7 )]
-position = Vector2( 834.737, 398.947 )
-
 [node name="Castle" parent="." instance=ExtResource( 2 )]
-position = Vector2( 90.9755, 386.063 )
+position = Vector2( 262.58, 492.277 )
 
 [node name="Barricade" parent="." instance=ExtResource( 3 )]
 position = Vector2( 640, 461 )
+
+[node name="Arrow" parent="." instance=ExtResource( 7 )]
+position = Vector2( 813.686, 75.7897 )
+
+[node name="OrkEnemy1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 862.003, 482.05 )

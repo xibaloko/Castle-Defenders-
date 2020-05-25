@@ -5,10 +5,18 @@ const GRAVITY = 15
 const SPEED = 50
 const JUMP_HEIGHT = -300
 
+var life = 50
+var energy = 50
+
 var motion = Vector2()
 
-func _physics_process(delta):
+func _ready():
+	var lifeBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("PlayerStats").get_node("PlayersLifeBar")
+	var energyBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("PlayerStats").get_node("PlayersEnergyBar")
+	lifeBar.set_value(life)
+	energyBar.set_value(energy)
 	
+func _physics_process(delta):
 	motion.y += GRAVITY
 	
 	if Input.is_action_pressed("ui_right"):

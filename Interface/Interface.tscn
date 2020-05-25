@@ -41,7 +41,7 @@ __meta__ = {
 [node name="PlayersLifeBar" type="TextureProgress" parent="HBoxContainer/PlayerStats"]
 margin_right = 505.0
 margin_bottom = 120.0
-value = 40.0
+value = 100.0
 texture_under = ExtResource( 7 )
 texture_progress = ExtResource( 9 )
 
