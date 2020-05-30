@@ -5,19 +5,23 @@ const GRAVITY = 15
 const SPEED = 50
 const JUMP_HEIGHT = -300
 
-var life = 50
+var life = 500
 var energy = 50
 var isAttacking = false
 
 var motion = Vector2()
 
-func _ready():
+func damage():
+	life -= 100
+
+func updateLifeAndEnergyBar():
 	var lifeBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("PlayerStats").get_node("PlayersLifeBar")
 	var energyBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("PlayerStats").get_node("PlayersEnergyBar")
 	lifeBar.set_value(life)
 	energyBar.set_value(energy)
-	
+
 func _physics_process(delta):
+	updateLifeAndEnergyBar()
 	motion.y += GRAVITY
 	
 	if Input.is_action_pressed("ui_right") && isAttacking == false:
