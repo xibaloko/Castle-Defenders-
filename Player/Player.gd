@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var orkReference1 = load ("res://Enemies/OrkEnemy1.tscn")
+
 const UP = Vector2(0, -1)
 const GRAVITY = 15
 const SPEED = 50
@@ -10,6 +12,7 @@ var energy = 50
 var isAttacking = false
 var receivingDamage = false
 var damageTaken
+var col
 
 var motion = Vector2()
 
@@ -60,9 +63,7 @@ func _on_AnimatedSprite_animation_finished():
 		isAttacking = false
 
 func _on_PlayersDamageArea_area_entered(area):
-	var collider = area.get_parent()
-	
-	if collider.name == "OrkEnemy1":
+	if area.is_in_group("OrkEnemy1"):
 		damageTaken = 10
 		receivingDamage = true
 

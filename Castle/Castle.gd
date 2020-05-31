@@ -25,9 +25,8 @@ func _process(_delta):
 		$AnimatedSprite.play("Destroyed")
 
 func _on_CastleDamageArea_area_entered(area):
-	var collider = area.get_parent()
 	
-	if collider.name == "OrkEnemy1":
+	if area.is_in_group("OrkEnemy1"):
 		damageTaken = 10
 		receivingDamage = true
 

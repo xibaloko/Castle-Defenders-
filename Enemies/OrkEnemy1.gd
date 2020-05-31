@@ -17,18 +17,21 @@ func _process(delta):
 	if walking:
 		col = move_and_collide(dir*speed*delta)
 	
-	if not dead:
-		if col and col.collider.name == "Player" or col.collider.name == "Castle":
+	if dead:
+		$AnimatedSprite.play("Dying")
+	else:
+		if col and col.collider.name == "Player":
+			$AnimatedSprite.play("Attacking")
+		elif col && col.collider.name == "Castle":
 			$AnimatedSprite.play("Attacking")
 		else:
 			$AnimatedSprite.play("Running")
-	else:
-		$AnimatedSprite.play("Dying")
 
 func _on_DyingActionArea_area_entered(area):
 	if area.is_in_group("Sword"):
 		killingHits -= 1
 		if killingHits == 0:
+			add_collision_exception_with(get_tree().get_root().get_node("Main").get_node("Player"))
 			dead = true
 			walking = false
 			$AnimatedSprite.play("Dying")
