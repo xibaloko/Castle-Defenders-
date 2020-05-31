@@ -43,8 +43,6 @@ position = Vector2( -90.7734, -70.1653 )
 shape = SubResource( 2 )
 
 [node name="CastleDamageArea" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CastleDamageArea"]
 position = Vector2( 19.9215, 1.85315 )

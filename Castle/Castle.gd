@@ -11,7 +11,7 @@ func updateLife():
 func damage():
 	life -= damageTaken
 
-func _process(delta):
+func _process(_delta):
 	updateLife()
 	
 	if receivingDamage == true:
@@ -31,5 +31,5 @@ func _on_CastleDamageArea_area_entered(area):
 		damageTaken = 10
 		receivingDamage = true
 
-func _on_CastleDamageArea_area_exited(area):
+func _on_CastleDamageArea_area_exited(_area):
 	receivingDamage = false

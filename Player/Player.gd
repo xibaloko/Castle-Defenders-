@@ -22,7 +22,7 @@ func updateLifeAndEnergyBar():
 	lifeBar.set_value(life)
 	energyBar.set_value(energy)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	updateLifeAndEnergyBar()
 	
 	if receivingDamage == true:
@@ -66,5 +66,5 @@ func _on_PlayersDamageArea_area_entered(area):
 		damageTaken = 10
 		receivingDamage = true
 
-func _on_PlayersDamageArea_area_exited(area):
+func _on_PlayersDamageArea_area_exited(_area):
 	receivingDamage = false
