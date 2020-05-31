@@ -49,11 +49,6 @@ animations = [ {
 "name": "Dying",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 34 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 32 ) ],
-"loop": true,
-"name": "Running",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 33 ), ExtResource( 16 ), ExtResource( 35 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "Hurt",
@@ -63,6 +58,11 @@ animations = [ {
 "loop": true,
 "name": "Attacking",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "Running",
+"speed": 8.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -87,9 +87,22 @@ position = Vector2( -7.81414, -0.11359 )
 shape = SubResource( 2 )
 
 [node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
 position = Vector2( -7.85981, -0.18325 )
 shape = SubResource( 3 )
+
+[node name="DyingActionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DyingActionArea"]
+position = Vector2( -7.85981, -0.18325 )
+shape = SubResource( 3 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="area_exited" from="DamageArea" to="." method="_on_DamageArea_area_exited"]
+[connection signal="area_entered" from="DyingActionArea" to="." method="_on_DyingActionArea_area_entered"]
+[connection signal="area_exited" from="DyingActionArea" to="." method="_on_DyingActionArea_area_exited"]

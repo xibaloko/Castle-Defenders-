@@ -5,14 +5,16 @@ const GRAVITY = 15
 const SPEED = 50
 const JUMP_HEIGHT = -300
 
-var life = 500
+var life = 2500
 var energy = 50
 var isAttacking = false
+var receivingDamage = false
+var damageTaken
 
 var motion = Vector2()
 
 func damage():
-	life -= 100
+	life -= damageTaken
 
 func updateLifeAndEnergyBar():
 	var lifeBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("PlayerStats").get_node("PlayersLifeBar")
@@ -22,6 +24,10 @@ func updateLifeAndEnergyBar():
 
 func _physics_process(delta):
 	updateLifeAndEnergyBar()
+	
+	if receivingDamage == true:
+		damage()
+	
 	motion.y += GRAVITY
 	
 	if Input.is_action_pressed("ui_right") && isAttacking == false:
@@ -52,3 +58,13 @@ func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "Attacking":
 		$AttackArea/CollisionShape2D.disabled = true
 		isAttacking = false
+
+func _on_PlayersDamageArea_area_entered(area):
+	var collider = area.get_parent()
+	
+	if collider.name == "OrkEnemy1":
+		damageTaken = 10
+		receivingDamage = true
+
+func _on_PlayersDamageArea_area_exited(area):
+	receivingDamage = false

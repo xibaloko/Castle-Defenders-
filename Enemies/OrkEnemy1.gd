@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 var dead = false
 var speed = 50
-var causeDamage = false
+var walking = true
+var killingHits = 2
 
 func _ready():
 	$AnimatedSprite.flip_h = true
@@ -14,26 +15,25 @@ func _process(delta):
 	var player = get_tree().get_root().get_node("Main").get_node("Player")
 	
 	var dir = (castle.global_position - global_position).normalized()
-	move_and_collide(dir*speed*delta)
 	
-#	if col and col.collider.name == "Castle":
-#		$AnimatedSprite.play("Attacking")
-#		castle.life -= 1
-#		print(castle.life)
-#	elif col and col.collider.name == "Player":
-#		$AnimatedSprite.play("Attacking")
-#		player.life -= 1
-#		print(player.life)
-#	else:
-#		$AnimatedSprite.play("Running")
+	if walking:
+		var col = move_and_collide(dir*speed*delta)
 
 func _on_DamageArea_area_entered(area):
-	if area.is_in_group("Sword"):
-		$AnimatedSprite.play("Dying")
-	elif area.is_in_group("OrcsEnemies"):
-		var orcEnemy = area.get_parent()
+	var collider = area.get_parent()
+	
+	if collider.name == "Player" or collider.name == "Castle":
 		$AnimatedSprite.play("Attacking")
-		orcEnemy.damage()
+
+func _on_DamageArea_area_exited(area):
+	$AnimatedSprite.play("Running")
+
+func _on_DyingActionArea_area_entered(area):
+	if area.is_in_group("Sword"):
+		killingHits -= 1
+		if killingHits == 0:
+			walking = false
+			$AnimatedSprite.play("Dying")
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "Dying":
