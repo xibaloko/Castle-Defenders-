@@ -69,3 +69,6 @@ func _on_PlayersDamageArea_area_entered(area):
 
 func _on_PlayersDamageArea_area_exited(_area):
 	receivingDamage = false
+
+func _on_OrkEnemy1_orcDead():
+	receivingDamage = false

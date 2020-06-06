@@ -29,8 +29,9 @@ func _on_IntervalTimer_timeout():
 	print("começou os monstros")
 	if orksCount < orksQuantity:
 		var spawnInstance = orkReference1.instance()
-	
+#		var player = get_tree().get_root().get_node("Main").get_node("Player")
 		get_parent().add_child(spawnInstance)
+#		spawnInstance.connect("OrcDead", player, "_on_OrkEnemy1_orcDead", [get_name()])
 		spawnInstance.set_global_position(get_global_position())
 		orksCount += 1
 		print("instanciou")

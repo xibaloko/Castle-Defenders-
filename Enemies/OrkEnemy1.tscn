@@ -54,15 +54,15 @@ animations = [ {
 "name": "Hurt",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 12 ), ExtResource( 28 ), ExtResource( 20 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Attacking",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 34 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "Running",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 12 ), ExtResource( 28 ), ExtResource( 20 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Attacking",
+"speed": 6.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]

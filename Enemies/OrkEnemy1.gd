@@ -1,13 +1,17 @@
 extends KinematicBody2D
 
+signal orcDead
+
 var dead = false
 var speed = 50
 var walking = true
 var killingHits = 2
 
 func _ready():
+	var player = get_tree().get_root().get_node("Main").get_node("Player")
 	$AnimatedSprite.flip_h = true
 	$AnimatedSprite.play("Running")
+	self.connect("orcDead", player, "_on_OrkEnemy1_orcDead")
 
 func _process(delta):
 	var castle = get_tree().get_root().get_node("Main").get_node("Castle")
@@ -33,9 +37,13 @@ func _on_DyingActionArea_area_entered(area):
 		if killingHits == 0:
 			add_collision_exception_with(get_tree().get_root().get_node("Main").get_node("Player"))
 			dead = true
+			emit_signal("orcDead")
 			walking = false
 			$AnimatedSprite.play("Dying")
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "Dying":
 		queue_free()
+		
+
+
