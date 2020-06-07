@@ -56,10 +56,9 @@ func _on_DyingActionArea_area_entered(area):
 			emit_signal("orcDead")
 			walking = false
 			$AnimatedSprite.play("Dying")
-	elif area.is_in_group("Troop"):
+	if area.is_in_group("Troop"):
 		damageTaken = 10
 		receivingDamage = true
-		
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "Dying":

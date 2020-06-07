@@ -37,8 +37,8 @@ position = Vector2( 878.432, 482.798 )
 position = Vector2( 961.286, 481.533 )
 
 [node name="SpawnTroopsPosition" parent="." instance=ExtResource( 6 )]
-position = Vector2( 479.988, 492.634 )
+position = Vector2( 479.988, 488.634 )
 
 [node name="LimitDirTroops" parent="." instance=ExtResource( 7 )]
-position = Vector2( 704.676, 493.255 )
+position = Vector2( 704.676, 489.255 )
 [connection signal="CallTroops" from="Player" to="SpawnTroopsPosition" method="_on_Player_CallTroops"]
