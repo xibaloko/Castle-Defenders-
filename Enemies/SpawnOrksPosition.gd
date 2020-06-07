@@ -14,29 +14,19 @@ func _ready():
 	$WaveTimer.start()
 
 func _on_WaveTimer_timeout():
-	print("Começou a wave")
 	if waveCount < wavesQuantity:
 		$IntervalTimer.set_wait_time(orksSpawnInterval)
 		$IntervalTimer.start()
-		
-		print("Começou os monstros")
 	else:
 		$WaveTimer.stop()
-		print("parou a wave")
-	
 
 func _on_IntervalTimer_timeout():
-	print("começou os monstros")
 	if orksCount < orksQuantity:
 		var spawnInstance = orkReference1.instance()
-#		var player = get_tree().get_root().get_node("Main").get_node("Player")
 		get_parent().add_child(spawnInstance)
-#		spawnInstance.connect("OrcDead", player, "_on_OrkEnemy1_orcDead", [get_name()])
 		spawnInstance.set_global_position(get_global_position())
 		orksCount += 1
-		print("instanciou")
 	else:
 		$IntervalTimer.stop()
 		waveCount += 1
 		orksCount = 0
-		print("parou os monstros")

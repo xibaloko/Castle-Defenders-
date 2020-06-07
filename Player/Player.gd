@@ -2,22 +2,35 @@ extends KinematicBody2D
 
 onready var orkReference1 = load ("res://Enemies/OrkEnemy1.tscn")
 
+signal CallTroops
+
 const UP = Vector2(0, -1)
 const GRAVITY = 15
 const SPEED = 50
 const JUMP_HEIGHT = -300
 
 var life = 2500
-var energy = 50
+var energy = 100
+
 var isAttacking = false
 var receivingDamage = false
 var damageTaken
+var availableEnergy = true
+var energyCost = 25
+
 var col
 
 var motion = Vector2()
 
 func damage():
 	life -= damageTaken
+
+func spendEnergy():
+	if energy > 0:
+		energy -= energyCost
+		emit_signal("CallTroops")
+	else:
+		availableEnergy = false
 
 func updateLifeAndEnergyBar():
 	var lifeBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("PlayerStats").get_node("PlayersLifeBar")
@@ -54,6 +67,10 @@ func _physics_process(_delta):
 		$AnimatedSprite.play("Attacking")
 		isAttacking = true
 		$AttackArea/CollisionShape2D.disabled = false
+	if Input.is_action_just_pressed("Call Troop"):
+		if availableEnergy:
+			spendEnergy()
+			print(energy)
 	
 	motion = move_and_slide(motion, UP)
 

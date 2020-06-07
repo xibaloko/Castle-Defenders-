@@ -44,6 +44,11 @@ animations = [ {
 "name": "Walking",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 8 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 12 ), ExtResource( 28 ), ExtResource( 20 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Attacking",
+"speed": 6.0
+}, {
 "frames": [ ExtResource( 15 ), ExtResource( 10 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 23 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "Dying",
@@ -58,11 +63,6 @@ animations = [ {
 "loop": true,
 "name": "Running",
 "speed": 8.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 12 ), ExtResource( 28 ), ExtResource( 20 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Attacking",
-"speed": 6.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -73,7 +73,9 @@ height = 15.8581
 radius = 23.9848
 height = 15.906
 
-[node name="OrkEnemy1" type="KinematicBody2D"]
+[node name="OrkEnemy1" type="KinematicBody2D" groups=[
+"Ork",
+]]
 script = ExtResource( 36 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -87,6 +89,7 @@ position = Vector2( -7.81414, -0.11359 )
 shape = SubResource( 2 )
 
 [node name="DyingActionArea" type="Area2D" parent="." groups=[
+"Ork",
 "OrkEnemy1",
 ]]
 
