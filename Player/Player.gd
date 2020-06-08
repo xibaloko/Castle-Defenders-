@@ -17,6 +17,7 @@ var receivingDamage = false
 var damageTaken
 var availableEnergy = true
 var energyCost = 25
+var availableSkill = false
 
 var col
 
@@ -68,7 +69,7 @@ func _physics_process(_delta):
 		isAttacking = true
 		$AttackArea/CollisionShape2D.disabled = false
 	if Input.is_action_just_pressed("Call Troop"):
-		if availableEnergy:
+		if availableEnergy and availableSkill:
 			spendEnergy()
 			print(energy)
 	
@@ -89,3 +90,6 @@ func _on_PlayersDamageArea_area_exited(_area):
 
 func _on_OrkEnemy1_orcDead():
 	receivingDamage = false
+
+func _on_SpawnTroopsPosition_CallingAvailable(new_value):
+	availableSkill = new_value
