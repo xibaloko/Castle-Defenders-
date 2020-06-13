@@ -1,6 +1,9 @@
 extends StaticBody2D
 
+signal destroyedCastle
+
 var life = 5000
+var destroyed = false
 var receivingDamage = false
 var damageTaken
 
@@ -9,12 +12,16 @@ func updateLife():
 	lifeBar.set_value(life)
 
 func damage():
-	life -= damageTaken
+	if life > 0:
+		life -= damageTaken
+	else:
+		emit_signal("destroyedCastle")
+		destroyed = true
 
 func _process(_delta):
 	updateLife()
 	
-	if receivingDamage == true:
+	if receivingDamage == true and not destroyed:
 		damage()
 		
 	if life >= 3750:
