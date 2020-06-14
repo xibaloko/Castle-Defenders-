@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 signal troopDead
 
+onready var deathSound = get_node("TroopDeathSound")
+
 var dead = false
 var speed = 50
 var walking = true
@@ -14,10 +16,11 @@ func updateLife():
 	lifeBar.set_value(life)
 
 func damage():
-	if life >= 1:
+	if life > 0:
 		life -= damageTaken
 	else:
 		dead = true
+		deathSound.play()
 		emit_signal("troopDead")
 
 func _ready():

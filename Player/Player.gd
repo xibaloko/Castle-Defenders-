@@ -30,6 +30,8 @@ func damage():
 		life -= damageTaken
 	else:
 		dead = true
+		var deathSound = $KingsDeathSound
+		deathSound.play()
 
 func spendEnergy():
 	if energy > 0:

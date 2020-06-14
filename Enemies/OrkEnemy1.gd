@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 signal orcDead
 
+onready var deathSound = get_node("DeathSound")
+onready var hitSound = get_node("HitSound")
+
 var player
 var dead = false
 var speed = 50
@@ -13,10 +16,11 @@ var damageTaken
 var receivingDamage = false
 
 func damage():
-	if life >= 1:
+	if life > 0:
 		life -= damageTaken
 	else:
 		dead = true
+		deathSound.play()
 
 func _ready():
 	player = get_tree().get_root().get_node("Main").get_node("Player")
@@ -50,14 +54,13 @@ func _process(delta):
 func _on_DyingActionArea_area_entered(area):
 	if area.is_in_group("Sword"):
 		killingHits -= 1
-		var hitSound = $HitSound
 		hitSound.play()
 		if killingHits == 0:
 			add_collision_exception_with(get_tree().get_root().get_node("Main").get_node("Player"))
 			dead = true
+			deathSound.play()
 			emit_signal("orcDead")
 			walking = false
-			$AnimatedSprite.play("Dying")
 	if area.is_in_group("Troop"):
 		damageTaken = 10
 		receivingDamage = true

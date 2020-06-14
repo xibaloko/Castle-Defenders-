@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Interface/Font/BalsamiqSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Interface/GameOver/GameOverBackground.png" type="Texture" id=2]
 [ext_resource path="res://Interface/GameOver.gd" type="Script" id=3]
+[ext_resource path="res://SoundEffects/GameOverMusicBg.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -55,4 +56,8 @@ margin_right = 415.0
 margin_bottom = 137.0
 custom_fonts/font = SubResource( 2 )
 text = "Return"
+
+[node name="GameOverMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+attenuation = 0.574349
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Return" to="." method="_on_Return_pressed"]
