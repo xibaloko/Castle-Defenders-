@@ -36,7 +36,10 @@ func _on_CastleDamageArea_area_entered(area):
 		damageTaken = 5
 		receivingDamage = true
 	elif area.is_in_group("OrkEnemy2"):
-		damageTaken = 10
+		damageTaken = 8
+		receivingDamage = true
+	elif area.is_in_group("OrkEnemy3"):
+		damageTaken = 12
 		receivingDamage = true
 
 func _on_CastleDamageArea_area_exited(_area):

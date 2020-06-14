@@ -2,12 +2,12 @@ extends Position2D
 
 signal AllOrksDied
 
-onready var orkReference = load ("res://Enemies/OrkEnemy1.tscn")
+onready var orkReference = load ("res://Enemies/OrkEnemy3.tscn")
 
 var spawnInstance
 
 var waveCount = 0
-var wavesQuantity = 3
+var wavesQuantity = 5
 var wavesInterval = 10
 var orksCount = 0
 var orksQuantity = 3

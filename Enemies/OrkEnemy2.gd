@@ -9,7 +9,7 @@ var player
 var dead = false
 var speed = 60
 var walking = true
-var killingHits = 3
+var killingHits = 2
 
 var life = 1500
 var damageTaken

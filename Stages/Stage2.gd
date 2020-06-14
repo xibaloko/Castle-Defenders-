@@ -5,7 +5,7 @@ func _ready():
 	BattleSound.play()
 
 func _on_SpawnOrksPosition_AllOrksDied():
-	print("Contratulation you destroyed all orks")
+	get_tree().change_scene("res://Interface/CompletedStage.tscn")
 
 func _on_Castle_destroyedCastle():
 	get_tree().change_scene("res://Interface/GameOver.tscn")

@@ -7,11 +7,11 @@ onready var hitSound = get_node("HitSound")
 
 var player
 var dead = false
-var speed = 50
+var speed = 65
 var walking = true
-var killingHits = 1
+var killingHits = 3
 
-var life = 1300
+var life = 1800
 var damageTaken
 var receivingDamage = false
 

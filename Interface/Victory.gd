@@ -5,6 +5,7 @@ func _ready():
 	bgMusic.play()
 
 func _on_Return_pressed():
+	Global.resetStages()
 	get_tree().change_scene("res://Interface/Menu.tscn")
 
 func _on_Quit_pressed():

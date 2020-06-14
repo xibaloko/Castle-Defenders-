@@ -5,10 +5,10 @@ signal troopDead
 onready var deathSound = get_node("TroopDeathSound")
 
 var dead = false
-var speed = 50
+var speed = 35
 var walking = true
 var receivingDamage = false
-var life = 2500
+var life = 2800
 var damageTaken
 
 func updateLife():
@@ -52,7 +52,12 @@ func _on_TroopDamageArea_area_entered(area):
 		walking = false
 		$AnimatedSprite.play("Attacking")
 	elif area.is_in_group("OrkEnemy2"):
-		damageTaken = 10
+		damageTaken = 8
+		receivingDamage = true
+		walking = false
+		$AnimatedSprite.play("Attacking")
+	elif area.is_in_group("OrkEnemy3"):
+		damageTaken = 12
 		receivingDamage = true
 		walking = false
 		$AnimatedSprite.play("Attacking")
