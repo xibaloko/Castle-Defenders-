@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	var BattleSound = $MedievalBattleSound
+	BattleSound.play()
 
 func _on_SpawnOrksPosition_AllOrksDied():
 	print("Contratulation you destroyed all orks")

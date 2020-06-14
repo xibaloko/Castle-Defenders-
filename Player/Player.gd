@@ -90,6 +90,8 @@ func _physics_process(_delta):
 			$AnimatedSprite.play("Attacking")
 			isAttacking = true
 			$AttackArea/CollisionShape2D.disabled = false
+			var swordHit = $HitSound
+			swordHit.play()
 		if Input.is_action_just_pressed("Call Troop"):
 			if availableEnergy and availableSkill:
 				spendEnergy()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Enemies/Ork01/WALK/WALK_001.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Ork01/WALK/WALK_002.png" type="Texture" id=2]
@@ -36,6 +36,7 @@
 [ext_resource path="res://Enemies/Ork01/RUN/RUN_000.png" type="Texture" id=34]
 [ext_resource path="res://Enemies/Ork01/HURT/HURT_003.png" type="Texture" id=35]
 [ext_resource path="res://Enemies/OrkEnemy1.gd" type="Script" id=36]
+[ext_resource path="res://SoundEffects/HitSound.wav" type="AudioStream" id=37]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -43,6 +44,16 @@ animations = [ {
 "loop": true,
 "name": "Walking",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "Running",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 10 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 23 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "Dying",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 12 ), ExtResource( 28 ), ExtResource( 20 ), ExtResource( 9 ) ],
 "loop": true,
@@ -53,16 +64,6 @@ animations = [ {
 "loop": true,
 "name": "Hurt",
 "speed": 15.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 10 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 23 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "Dying",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 34 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 32 ) ],
-"loop": true,
-"name": "Running",
-"speed": 8.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -100,5 +101,9 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DyingActionArea"]
 position = Vector2( -7.85981, -0.18325 )
 shape = SubResource( 3 )
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 37 )
+area_mask = 4
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="DyingActionArea" to="." method="_on_DyingActionArea_area_entered"]

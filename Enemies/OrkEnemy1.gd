@@ -50,6 +50,8 @@ func _process(delta):
 func _on_DyingActionArea_area_entered(area):
 	if area.is_in_group("Sword"):
 		killingHits -= 1
+		var hitSound = $HitSound
+		hitSound.play()
 		if killingHits == 0:
 			add_collision_exception_with(get_tree().get_root().get_node("Main").get_node("Player"))
 			dead = true

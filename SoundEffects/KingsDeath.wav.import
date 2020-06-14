@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/KingsDeath.wav-5c6633c472df2af92c59c43e19310ef2.sample"
+
+[deps]
+
+source_file="res://SoundEffects/KingsDeath.wav"
+dest_files=[ "res://.import/KingsDeath.wav-5c6633c472df2af92c59c43e19310ef2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/OrksDeath.wav-66cb70deb61caf95de8c3f33172fc8c9.sample"
+
+[deps]
+
+source_file="res://SoundEffects/OrksDeath.wav"
+dest_files=[ "res://.import/OrksDeath.wav-66cb70deb61caf95de8c3f33172fc8c9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

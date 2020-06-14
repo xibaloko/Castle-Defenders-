@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TroopsDeath.wav-f798a05c1a54f3e3a34e33c9195b7d00.sample"
+
+[deps]
+
+source_file="res://SoundEffects/TroopsDeath.wav"
+dest_files=[ "res://.import/TroopsDeath.wav-f798a05c1a54f3e3a34e33c9195b7d00.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
