@@ -32,8 +32,10 @@ func _process(_delta):
 		$AnimatedSprite.play("Destroyed")
 
 func _on_CastleDamageArea_area_entered(area):
-	
 	if area.is_in_group("OrkEnemy1"):
+		damageTaken = 5
+		receivingDamage = true
+	elif area.is_in_group("OrkEnemy2"):
 		damageTaken = 10
 		receivingDamage = true
 

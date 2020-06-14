@@ -47,6 +47,11 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_TroopDamageArea_area_entered(area):
 	if area.is_in_group("OrkEnemy1"):
+		damageTaken = 5
+		receivingDamage = true
+		walking = false
+		$AnimatedSprite.play("Attacking")
+	elif area.is_in_group("OrkEnemy2"):
 		damageTaken = 10
 		receivingDamage = true
 		walking = false

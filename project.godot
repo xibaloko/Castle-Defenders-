@@ -19,6 +19,10 @@ config/name="Castle Defenders"
 run/main_scene="res://Interface/Menu.tscn"
 config/icon="res://Icone Castle Defenders.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/resizable=false

@@ -60,15 +60,20 @@ animations = [ {
 "name": "Walking",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 49 ), ExtResource( 46 ), ExtResource( 33 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "Running",
+"name": "Hurt",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 20 ), ExtResource( 25 ) ],
 "loop": false,
 "name": "Dying",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 49 ), ExtResource( 46 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "Running",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 24 ), ExtResource( 8 ) ],
 "loop": true,
@@ -79,11 +84,6 @@ animations = [ {
 "loop": true,
 "name": "Jumping",
 "speed": 6.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "Hurt",
-"speed": 15.0
 }, {
 "frames": [ ExtResource( 27 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 21 ) ],
 "loop": true,

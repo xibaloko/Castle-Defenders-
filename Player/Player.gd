@@ -111,7 +111,13 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_PlayersDamageArea_area_entered(area):
 	if area.is_in_group("OrkEnemy1"):
+		damageTaken = 5
+		receivingDamage = true
+	elif area.is_in_group("OrkEnemy2"):
 		damageTaken = 10
+		receivingDamage = true
+	elif area.is_in_group("OrkEnemy3"):
+		damageTaken = 15
 		receivingDamage = true
 
 func _on_PlayersDamageArea_area_exited(_area):

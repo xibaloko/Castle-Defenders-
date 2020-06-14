@@ -11,7 +11,7 @@ var speed = 50
 var walking = true
 var killingHits = 2
 
-var life = 1000
+var life = 1500
 var damageTaken
 var receivingDamage = false
 
@@ -69,3 +69,6 @@ func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "Dying":
 		self.disconnect("orcDead", player, "_on_OrkEnemy1_orcDead")
 		queue_free()
+
+func _on_DyingActionArea_area_exited(_area):
+	receivingDamage = false
