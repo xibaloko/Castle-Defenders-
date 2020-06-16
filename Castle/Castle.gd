@@ -8,7 +8,7 @@ var receivingDamage = false
 var damageTaken
 
 func updateLife():
-	var lifeBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("CastleStats").get_node("CastlesLifeBar")
+	var lifeBar = get_tree().get_root().get_node("Main/CanvasLayer/Interface/HBoxContainer/CastleStats/LifeStats/CastlesLifeBar")
 	lifeBar.set_value(life)
 
 func damage():

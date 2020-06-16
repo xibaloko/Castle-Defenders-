@@ -43,36 +43,36 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 53.0
+margin_left = 40.0
 margin_top = 205.0
-margin_right = 971.0
+margin_right = 984.0
 margin_bottom = 394.0
 alignment = 1
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 918.0
+margin_right = 944.0
 margin_bottom = 96.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.34902, 0.34902, 0.34902, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-text = "SUCCESSFUL DEFENSE"
+text = "DEFESA BEM-SUCEDIDA"
 align = 1
 valign = 1
 
 [node name="Description" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 100.0
-margin_right = 918.0
+margin_right = 944.0
 margin_bottom = 148.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.368627, 0.364706, 0.364706, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-text = "You have  destroyed all orks!"
+text = "Você destruiu todos os Orcs!"
 align = 1
 valign = 1
 
 [node name="Continue" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 152.0
-margin_right = 918.0
+margin_right = 944.0
 margin_bottom = 189.0
 custom_fonts/font = SubResource( 3 )
 text = "CONTINUE"

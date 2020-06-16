@@ -19,7 +19,7 @@ func _ready():
 	$WaveTimer.start()
 	
 func _process(_delta):
-	if not is_instance_valid(spawnInstance):
+	if waveCount == wavesQuantity and not is_instance_valid(spawnInstance):
 		emit_signal("AllOrksDied")
 		self.queue_free()
 

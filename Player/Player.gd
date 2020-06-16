@@ -41,8 +41,8 @@ func spendEnergy():
 		availableEnergy = false
 
 func updateLifeAndEnergyBar():
-	var lifeBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("PlayerStats").get_node("PlayersLifeBar")
-	var energyBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("PlayerStats").get_node("PlayersEnergyBar")
+	var lifeBar = get_tree().get_root().get_node("Main/CanvasLayer/Interface/HBoxContainer/PlayerStats/LifeStats/PlayersLifeBar")
+	var energyBar = get_tree().get_root().get_node("Main/CanvasLayer/Interface/HBoxContainer/PlayerStats/EnergyStats/PlayersEnergyBar")
 	lifeBar.set_value(life)
 	energyBar.set_value(energy)
 	

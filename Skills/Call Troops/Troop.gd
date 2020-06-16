@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-signal troopDead
-
 onready var deathSound = get_node("TroopDeathSound")
 
 var dead = false
@@ -12,7 +10,7 @@ var life = 2800
 var damageTaken
 
 func updateLife():
-	var lifeBar = get_tree().get_root().get_node("Main").get_node("CanvasLayer").get_node("Interface").get_node("HBoxContainer").get_node("CastleStats").get_node("TroopsLifeBar")
+	var lifeBar = get_tree().get_root().get_node("Main/CanvasLayer/Interface/HBoxContainer/CastleStats/TroopStats/TroopsLifeBar")
 	lifeBar.set_value(life)
 
 func damage():
@@ -21,7 +19,6 @@ func damage():
 	else:
 		dead = true
 		deathSound.play()
-		emit_signal("troopDead")
 
 func _ready():
 	$AnimatedSprite.play("Walking")
@@ -29,7 +26,7 @@ func _ready():
 func _process(delta):
 	updateLife()
 	
-	if receivingDamage == true:
+	if receivingDamage == true and dead == false:
 		damage()
 	
 	var limitTroopPosition = get_tree().get_root().get_node("Main").get_node("LimitDirTroops")
@@ -39,6 +36,7 @@ func _process(delta):
 		move_and_collide(dir*speed*delta)
 
 	if dead:
+		walking = false
 		$AnimatedSprite.play("Dying")
 	
 func _on_AnimatedSprite_animation_finished():

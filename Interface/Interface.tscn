@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Interface/Hud/lifebarEmpty.png" type="Texture" id=1]
 [ext_resource path="res://Interface/Hud/shieldbarbg.png" type="Texture" id=2]
-[ext_resource path="res://Interface/Hud/kingslifebarfill.png" type="Texture" id=3]
-[ext_resource path="res://Interface/Hud/shieldbarfill.png" type="Texture" id=4]
-[ext_resource path="res://Interface/Hud/energybarfill.png" type="Texture" id=5]
+[ext_resource path="res://Interface/Hud/troopsLifeBarFill.png" type="Texture" id=3]
+[ext_resource path="res://Interface/Hud/CastleLifeBarFill.png" type="Texture" id=4]
+[ext_resource path="res://Interface/Hud/energybarfill2.png" type="Texture" id=5]
 [ext_resource path="res://Interface/Hud/kingslifebarbg.png" type="Texture" id=6]
 [ext_resource path="res://Interface/Hud/lifebarbg.png" type="Texture" id=7]
 [ext_resource path="res://Interface/Hud/energybarbg.png" type="Texture" id=8]
-[ext_resource path="res://Interface/Hud/lifebarfill.png" type="Texture" id=9]
+[ext_resource path="res://Interface/Hud/lifebarfill2.png" type="Texture" id=9]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -18,8 +19,8 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
-margin_right = -81.0
-margin_bottom = 368.0
+margin_right = -10.0
+margin_bottom = 244.0
 rect_scale = Vector2( 0.3, 0.3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -27,45 +28,85 @@ __meta__ = {
 
 [node name="PlayerStats" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 505.0
-margin_bottom = 368.0
+margin_bottom = 244.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayersLifeBar" type="TextureProgress" parent="HBoxContainer/PlayerStats"]
+[node name="LifeStats" type="TextureRect" parent="HBoxContainer/PlayerStats"]
 margin_right = 505.0
 margin_bottom = 120.0
+texture = ExtResource( 7 )
+
+[node name="PlayersLifeBar" type="TextureProgress" parent="HBoxContainer/PlayerStats/LifeStats"]
+margin_left = 128.0
+margin_top = 33.0
+margin_right = 462.0
+margin_bottom = 86.0
 max_value = 2500.0
 value = 2500.0
-texture_under = ExtResource( 7 )
+texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="PlayersEnergyBar" type="TextureProgress" parent="HBoxContainer/PlayerStats"]
+[node name="EnergyStats" type="TextureRect" parent="HBoxContainer/PlayerStats"]
 margin_top = 124.0
 margin_right = 505.0
 margin_bottom = 244.0
+texture = ExtResource( 8 )
+
+[node name="PlayersEnergyBar" type="TextureProgress" parent="HBoxContainer/PlayerStats/EnergyStats"]
+margin_left = 126.544
+margin_top = 30.5443
+margin_right = 460.544
+margin_bottom = 83.5443
 value = 100.0
-texture_under = ExtResource( 8 )
+texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CastleStats" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 509.0
 margin_right = 1014.0
-margin_bottom = 368.0
+margin_bottom = 244.0
 
-[node name="CastlesLifeBar" type="TextureProgress" parent="HBoxContainer/CastleStats"]
+[node name="LifeStats" type="TextureRect" parent="HBoxContainer/CastleStats"]
 margin_right = 505.0
 margin_bottom = 120.0
+texture = ExtResource( 6 )
+
+[node name="CastlesLifeBar" type="TextureProgress" parent="HBoxContainer/CastleStats/LifeStats"]
+margin_left = 125.329
+margin_top = 32.8479
+margin_right = 459.329
+margin_bottom = 85.8479
 max_value = 5000.0
 value = 5000.0
-texture_under = ExtResource( 6 )
-texture_progress = ExtResource( 3 )
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TroopsLifeBar" type="TextureProgress" parent="HBoxContainer/CastleStats"]
+[node name="TroopStats" type="TextureRect" parent="HBoxContainer/CastleStats"]
 margin_top = 124.0
 margin_right = 505.0
 margin_bottom = 244.0
-max_value = 1000.0
-value = 1000.0
-texture_under = ExtResource( 2 )
-texture_progress = ExtResource( 4 )
+texture = ExtResource( 2 )
+
+[node name="TroopsLifeBar" type="TextureProgress" parent="HBoxContainer/CastleStats/TroopStats"]
+margin_left = 126.634
+margin_top = 32.57
+margin_right = 460.634
+margin_bottom = 85.57
+max_value = 2800.0
+value = 2800.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

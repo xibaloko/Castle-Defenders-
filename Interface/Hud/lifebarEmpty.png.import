@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shieldbarfill.png-d17ddd41392756cd46e40515a8e9630d.stex"
+path="res://.import/lifebarEmpty.png-bb11bab607df5a72bdd72d2a1cc51639.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interface/Hud/shieldbarfill.png"
-dest_files=[ "res://.import/shieldbarfill.png-d17ddd41392756cd46e40515a8e9630d.stex" ]
+source_file="res://Interface/Hud/lifebarEmpty.png"
+dest_files=[ "res://.import/lifebarEmpty.png-bb11bab607df5a72bdd72d2a1cc51639.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kingslifebarfill.png-52588807b2795e7883349d476a8604be.stex"
+path="res://.import/troopsLifeBarFill.png-dbcf42d2987bf371c7bb85ba17b06651.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interface/Hud/kingslifebarfill.png"
-dest_files=[ "res://.import/kingslifebarfill.png-52588807b2795e7883349d476a8604be.stex" ]
+source_file="res://Interface/Hud/troopsLifeBarFill.png"
+dest_files=[ "res://.import/troopsLifeBarFill.png-dbcf42d2987bf371c7bb85ba17b06651.stex" ]
 
 [params]
 

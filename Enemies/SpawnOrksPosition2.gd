@@ -7,10 +7,10 @@ onready var orkReference = load ("res://Enemies/OrkEnemy2.tscn")
 var spawnInstance
 
 var waveCount = 0
-var wavesQuantity = 6
+var wavesQuantity = 8
 var wavesInterval = 10
 var orksCount = 0
-var orksQuantity = 3
+var orksQuantity = 4
 var orksSpawnInterval = 2
 
 func _ready():
@@ -19,7 +19,7 @@ func _ready():
 	$WaveTimer.start()
 	
 func _process(_delta):
-	if not is_instance_valid(spawnInstance):
+	if waveCount == wavesQuantity and not is_instance_valid(spawnInstance):
 		emit_signal("AllOrksDied")
 		self.queue_free()
 
